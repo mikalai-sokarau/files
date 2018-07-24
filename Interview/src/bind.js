@@ -11,5 +11,6 @@ Function.prototype.bind = function(context) {
 
 Function.prototype.bind = function(context, ...args) {
   const that = this;
-  return (...moreArgs) => that.call(context, ...moreArgs, ...args);
+  return (...moreArgs) => that.call(context, ...args, ...moreArgs);
 };
+
