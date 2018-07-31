@@ -1,0 +1,40 @@
+Node event loop:
+  timers - вызывает callbacks отложенные через setTimeout(), setInterval()
+  pending callbacks - вызывает I/O callbacks отложенные на следующию итерацию жизненного цикла
+  idle, prepare - используются только внутренне
+  poll - получает новые I/O events, 
+  check - вызывает setImmediate()
+  close callbacks - закрывает необходимые callback (socket.on('close'), ...)
+
+Exporess = routing + middlewares
+
+Express request-response cycle:
+  1. Request
+  2. Configuration
+  3. Application middlewares
+  4. Route middlewares
+  5. View (html / json)
+  6. Response
+
+Middleware types: 
+  - Application level
+  - Router level
+  - Error-handling
+  - Built-in
+  - 3rd-party (напр. xxx-parser)
+
+Express состоит из:
+  - express() - главная функция
+  - Application - само приложение
+  - Request
+  - Response
+  - Router 
+
+Создание сервера на express
+  const app = express();
+  app.listen(3000);
+  app.get('/', function(req, res) {
+    res.json( { ok: true } );
+  });
+
+  // app.use(express.json()) - использование middleware 
