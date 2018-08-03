@@ -6,10 +6,7 @@ API and backend service developer. Skills / experience:
 •	Microservices – desired
 •	AWS lambda – desired
 
-today:
-REST
-HTTP
-SQL basics
+Jira, как ты пишешь приложения на REST
 
 REST - архитектурный стиль взаимодействия компонентов распределенного приложения в сети.
 Принципы:
