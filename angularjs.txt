@@ -10,7 +10,7 @@
 AngularJS выражения поддерживают фильтры.
 
 ----------
-ng-app, ng-bind = {{}}, ng-model,
+ng-bind = {{}}, ng-model,
 ----------
 
 - Что нужно сделать, чтобы запустить AngularJS приложение?
@@ -27,6 +27,60 @@ ng-app, ng-bind = {{}}, ng-model,
 остальных $scope.
 
 - Что такое контроллер?
-- Контроллер это функция, которая содержит 
+- Контроллер это функция, которая обычно принимает в аргументах пустой объект $scope и 
+добавляет в него поля и функции, которые будут использоваться далее во view.
+
+- Что такое директивы?
+- Директивы позволяют расширять стандартную разметку HTML и описывать поведение отдельных
+элементов.
+
+- Что такое сервисы?
+- Сервисы являются специальными объектами или функциями, которые выполняют общие для всего
+приложения задачи. В AngularJS существуют встроенные сервисы, такие как $q, $http и т.д., а
+так же существует возможность создавать свои собственные.
+
+- Как настроить обмен данными между двумя директивами?
+- Есть несколько вариантов настроить общение между директивами:
+  # Сервисы. Этот вариант является предпочтительным и наиболее часто используемым.
+  # События (events). 
+    $emit отправляет событие вверх по иерархии. 
+    $broadcast вниз.
+    $on позволяет подписаться на событие.
+  # Добавлять данные в глобальный объект $rootScope.
+  # Через общий родительский элемент.
+
+- Что вы можете сказать о binding types в AngularJS?
+  @:  text binding 
+  =:  two-way binding
+  &:  method binding
+  <:  one-way binding
+
+- Как вы понимаете выражение Dependency Injection?
+- DI это паттерн / техника, внедрения внешних зависимостей, при котором между компонентами 
+отсутствуют жесткие связи. Обычно внедряемая зависимость передается в аргументах и далее 
+используется в бизнес логике компонента.
+
+- Что вы знаете о жизненном цикле директивы?
+- Жизненный цикл директивы состоит из фаз:
+  -> compile. После загрузки HTML разметки браузером AngularJS вызывает функцию compile 
+  у всех обнаруженных директив.
+  -> controller. На этом этапе AngularJS создает контроллер для директивы.
+  -> pre-link
+  -> post-link
+
+- Как работает digest cycle в AngularJS?
+- 
 
 
+> 1. Directive. How to establish communication btw 2 ones
+> 2. $emit vs $broadcast.
+> 3. Binding types
+> 4. Digest cycle. Dirty-checking
+> 5. When a scope is terminated, two similar “destroy” events are fired. What are they used for, and why are there two?
+> 6. Difference btw ng-show/ng-hide and ng-if
+> 7. How to reset a $timeout and disable a $watch
+> 8. Factory vs Service vs Provider
+> 9. How to include non-angular in digest cycle?
+> 10. evalasync vs applyasync
+> 11. Where should we implement the DOM manipulation in AngularJS?
+> 12. directive lifecycle
